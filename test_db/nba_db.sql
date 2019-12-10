@@ -261,12 +261,13 @@ INSERT INTO eventWinner(eventID, yearGroup, personID, winnerScore, winnerRounds)
 
 
 ###Comment Out Users after creation
-/*create user eventCoordinator identified by "Coordinator";
-create user GM identified by "GM";
-create user MasterOfCeremonies identified by "MoC";
-create user TeamOwner identified by "Owner";
-create user LeagueCommissioner identified by "Commissioner";
-create user Anyone identified by "Anyone";*/
+Create User eventCoordinator identified by "Thename11!@$";
+Create User GM identified by "Thename22!@$";
+Create User MasterOfCeremonies identified by "Thename33!$";
+Create User TeamOwner identified by "Thename44!@$";
+Create User LeagueCommissioner identified by "Thename66!@$";
+Create User Anyone identified by "Thename77!@$";
+
 
 
 DELIMITER $$
