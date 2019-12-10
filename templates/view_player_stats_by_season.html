@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+td, th {
+  border: 1px solid #dddddd;
+  padding: 0.4em;
+}
+th {
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.button {
+  position: absolute;
+  top: 4%;
+  left: 90%;
+}
+
+</style>
+
+<body>
+  <div>
+    <h1>Player Stats by Season</h1> <!--EDIT THIS-->
+    <button onclick="window.location.href='http://10.3.93.57/lampy/';" class="button">Back Home</button>
+  </div>
+
+<meta charset="UTF-8">
+<title>Player Stats by Season</title> <!--EDIT THIS-->
+{% if result %}
+  <table id="viewPlayerStatsBySeason"> <!--EDIT THIS-->
+    <tbody>
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Year Group</th>
+        <th>Points Per Game</th>
+        <th>Assissts Per Game</th>
+        <th>Field Goal Percentage</th>
+        <th>Three Pointers Per Game</th>
+        <th>Three Pointer Percentage</th>
+        <th>Free Throws Percentage</th>
+        <th>Offensive Rebounds Per Game</th>
+        <th>Defensive Rebounds Per Game</th>
+        <th>Turnovers Per Game</th>
+        <th>Blocks Per Game</th>
+        <th>Steals Per Game</th>
+      </tr>
+      {% for row in result %}
+      <tr>
+        <td> {{ row.lastName }}</td>
+        <td> {{ row.firstName }}</td>
+        <td> {{ row.yearGroup }}</td>
+        <td> {{ row.pointsPerGame }}</td>
+        <td> {{ row.assistsPerGame }}</td>
+        <td> {{ row.fieldGoalPercentage }}</td>
+        <td> {{ row.threePointersPerGame }}</td>
+        <td> {{ row.threePointerPercentage }}</td>
+        <td> {{ row.freeThrowsPercentage }}</td>
+        <td> {{ row.offensiveReboundsPerGame }}</td>
+        <td> {{ row.defensiveReboundsPerGame }}</td>
+        <td> {{ row.turnoversPerGame }}</td>
+        <td> {{ row.blocksPerGame }}</td>
+        <td> {{ row.stealsPerGame }}</td>
+      </tr> {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
+</body>
+</html>
+

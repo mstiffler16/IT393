@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  text: centered;
+}
+td, th {
+  border: 1px solid #dddddd;
+  padding: 0.4em;
+}
+th {
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.button {
+  position: absolute;
+  top: 4%;
+  left: 90%;
+}
+
+</style>
+
+<body>
+  <div>
+    <h1>Salary by Person</h1> <!--EDIT THIS-->
+    <button onclick="window.location.href='http://10.3.93.57/lampy/';" class="button">Back Home</button>
+  </div>
+
+<meta charset="UTF-8">
+<title>Salary by Person</title> <!--EDIT THIS-->
+{% if result %}
+  <table id="viewSalaryByPerson"> <!--EDIT THIS-->
+    <tbody>
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Amount Earned</th>
+        <th>Year Group</th>
+      </tr>
+      {% for row in result %}
+      <tr>
+        <td> {{ row.lastName }}</td>
+        <td> {{ row.firstName }}</td>
+        <td> {{ row.amountEarned }}</td>
+        <td> {{ row.yearGroup }}</td>
+      </tr> {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
+</body>
+</html>
+

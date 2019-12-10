@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  text: centered;
+}
+td, th {
+  border: 1px solid #dddddd;
+  padding: 0.4em;
+}
+th {
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.button {
+  position: absolute;
+  top: 4%;
+  left: 90%;
+}
+
+</style>
+
+<body>
+  <div>
+    <h1>Coaches by Season and Team</h1> <!--EDIT THIS-->
+    <button onclick="window.location.href='http://10.3.93.57/lampy/';" class="button">Back Home</button>
+  </div>
+
+<meta charset="UTF-8">
+<title>Coaches by Season and Team</title> <!--EDIT THIS-->
+{% if result %}
+  <table id="viewEventWinnerBySeasonandTeam"> <!--EDIT THIS-->
+    <tbody>
+      <tr>
+        <th>Person ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Team ID</th>
+        <th>Team Name</th>
+        <th>Year Group</th>
+      </tr>
+      {% for row in result %}
+      <tr>
+        <td> {{ row.PersonID }}</td>
+        <td> {{ row.firstName }}</td>
+        <td> {{ row.lastName }}</td>
+        <td> {{ row.teamID }}</td>
+        <td> {{ row.teamName }}</td>
+        <td> {{ row.yearGroup }}</td>
+      </tr> {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
+</body>
+</html>
+
